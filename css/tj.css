@@ -106,12 +106,13 @@ body {
 \*------------------------------------*/
 .box-wrap {
   margin: 50px 0;
+  
 }
 
 .box {
   width: 32%;
   border: solid 1px #CCC;
-  float: left;
+  margin: auto;
   padding: 5px;
 }
   .box:nth-child(n) {
