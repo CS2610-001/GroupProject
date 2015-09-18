@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Profile</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<link rel="stylesheet" href="css\kyle.css" charset="utf-8">
+	<link rel="stylesheet" href="css\projectStyle.css" charset="utf-8">
 </head>
 <body>
   <header>
@@ -26,14 +26,10 @@
 	<div class="profilePic">
 		<img src="images/profilePic.jpg" alt="Profile Picture" ></img>
 	</div>
-	<div class="username">
-		<input type="text" name=myText value="<USERNAME>" readonly>
-	</div>
-	<div class="emailAddress">
-		<input type="text" name=myText value="<EMAILADDRESS>">
-	</div>
-	<div class="biography">
-		<input type="text" name=myText value="<BIOGRAPHY>">
+	<div class="profileTextBox">
+		<p><input type="text" name=myText value="<USERNAME>" readonly></p>
+		<p><input type="text" name=myText value="<EMAILADDRESS>"></p>
+		<p><input type="text" name=myText value="<BIOGRAPHY>"></p>
 	</div>
 	<!--Use javascript to write changes to bio/email to database. Return "SAVED!" upon completion-->
 	<div class="saveButton">
