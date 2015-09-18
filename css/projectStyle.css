@@ -90,7 +90,9 @@ html {
   height: 100%;
 }
 body {
-  background: #FFF;
+  /*background: #FFF;*/
+  background-image: url(../images/Sea-green-blur-background1.jpg);
+  /*background-image: url(../images/Light-Blue-blur-background1.jpg);*/
   color: #494949;
   font-family: sans-serif;
   height: 100%;
