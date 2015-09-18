@@ -91,8 +91,8 @@ html {
 }
 body {
   /*background: #FFF;*/
-  background-image: url(../images/Sea-green-blur-background1.jpg);
-  /*background-image: url(../images/Light-Blue-blur-background1.jpg);*/
+  /*background-image: url(../images/Sea-green-blur-background1.jpg);*/
+  background-image: url(../images/Light-Blue-blur-background1.jpg);
   color: #494949;
   font-family: sans-serif;
   height: 100%;
@@ -132,6 +132,7 @@ header {
     -webkit-justify-content: space-between;
     -moz-justify-content: space-between;
     justify-content: space-between;
+    background-color: #ADD8E6;
   }
     nav a {
       border: solid 1px;
@@ -143,10 +144,16 @@ header {
       text-decoration: none;
     }
       nav a:hover, nav a:active {
-        color: #494949;
+        color: #000000;
       }
       nav a:last-child {
         margin: 0;
+        background-color: #434C50;
+		    color: #ADD8E6;
+      }
+
+      nav a:visited{
+        color: #551A8B;
       }
 
   /*------------------------------------*\
