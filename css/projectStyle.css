@@ -136,7 +136,7 @@ header {
   }
     nav a {
       border: solid 1px;
-      color: #CCC;
+      color: #000000;
       display: inline-block;
       float: left;
       margin: 0 175px 0 0;
@@ -144,12 +144,11 @@ header {
       text-decoration: none;
     }
       nav a:hover, nav a:active {
-        color: #000000;
+        background-color: #434C50;
+		    color: #ADD8E6;
       }
       nav a:last-child {
         margin: 0;
-        background-color: #434C50;
-		    color: #ADD8E6;
       }
 
       nav a:visited{
