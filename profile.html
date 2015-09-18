@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="css\kyle.css" charset="utf-8">
+</head>
+<body>
+  <header>
+		<div class="header">
+			<h1>&lt;USER&gt;'s Profile</h1>
+		</div>
+	</header>
+	<!--Logout user and return to dashboard-->
+	<div class="logout">
+		<button type="button">Logout</button>
+	</div>
+	<nav>
+		<a href="./index.html">Dashboard</a>
+		<a href="./dashboard.html">Home</a>
+		<a href="./profile.html">Profile</a>
+		<a href="./search.html">Search</a>
+		<a href="./savedSearches.html">Saved Searches</a>
+	</nav>
+	<div class="profilePic">
+		<img src="images/profilePic.jpg" alt="Profile Picture" ></img>
+	</div>
+	<div class="username">
+		<input type="text" name=myText value="<USERNAME>" readonly>
+	</div>
+	<div class="emailAddress">
+		<input type="text" name=myText value="<EMAILADDRESS>">
+	</div>
+	<div class="biography">
+		<input type="text" name=myText value="<BIOGRAPHY>">
+	</div>
+	<!--Use javascript to write changes to bio/email to database. Return "SAVED!" upon completion-->
+	<div class="saveButton">
+		<button type="button">SAVE</button>
+	</div>
+</body>
+</html>
