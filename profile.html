@@ -16,11 +16,11 @@
 			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress)){
     		alert("SAVED")
   		}	else{
-				document.getElementById("email").innerHTML = "user@domain.tld";
+				document.getElementById("email").value = "user@domain.tld";
 				alert("You have entered an invalid email address!")
 
 			}
-			document.getElementById("bio").innerHTML = biography;
+			document.getElementById("bio").value = biography;
 		}
 
 		function logout(){
