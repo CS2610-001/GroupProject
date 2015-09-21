@@ -102,7 +102,39 @@ header {
 /*------------------------------------*\
                 ¡NAV
 \*------------------------------------*/
+nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  background-color: #ADD8E6;
+}
+  nav a {
+    border: solid 1px;
+    color: #000000;
+    display: inline-block;
+    float: left;
+    margin: 0 175px 0 0;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
+    nav a:hover, nav a:active {
+      background-color: #434C50;
+      color: #ADD8E6;
+    }
+    nav a:last-child {
+      margin: 0;
+    }
 
+    nav a:visited{
+      color: #551A8B;
+    }
 
 /*------------------------------------*\
                 ¡FOOTER
