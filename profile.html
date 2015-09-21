@@ -35,16 +35,14 @@
 		</div>
 	</header>
 	<!--Logout user and return to dashboard-->
-	<div class="logout">
-		<button onclick="logout()">Logout</button>
-	</div>
+		<input type="submit" class="button-link" value="Logout" onclick="logout()">
 	<nav>
 		<a href="./index.html">Dashboard</a>
 		<a href="./dashboard.html">Home</a>
 		<a href="./profile.html">Profile</a>
 		<a href="./savedSearches.html">Saved Searches</a>
 		<form id="searchbar">
-			<input type="text" size="25" maxlength="150"><input type="submit" value="Search">
+			<input type="text" size="25" maxlength="150"><input type="submit" class="button-link" value="Search">
 		</form>
 	</nav>
 	<div class="profilePic">
@@ -55,10 +53,9 @@
 		<p><input type="text" value="<USERNAME>" readonly /></p>
 		<p><input type="text" id="email" value="user@domain.tld" /></p>
 		<p><textarea rows="4" cols="50" type="text" id="bio">Bio</textarea></p>
+		<input type="submit" class="button-link" value="SAVE" onclick="saveData()">
 	</div>
 	<!--Use javascript to write changes to bio/email to database. Return "SAVED!" upon completion-->
-	<div class="saveButton">
-		<button onclick="saveData()">SAVE</button>
-	</div>
+
 </body>
 </html>
