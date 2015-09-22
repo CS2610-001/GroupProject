@@ -126,7 +126,7 @@ header {
                   ¡NAV
   \*------------------------------------*/
   nav {
-    /*display: -webkit-box;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -135,7 +135,7 @@ header {
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     -moz-justify-content: space-between;
-    justify-content: space-between;*/
+    justify-content: space-between;
     background-color: #ADD8E6;
   }
     nav a {
@@ -143,7 +143,8 @@ header {
       color: #494949;
       display: inline-block;
       float: left;
-      margin: 0 5px 0 0;
+      width: 180px
+      margin: 0 5px 0 5px;
       padding: 5px 10px;
       text-decoration: none;
       background-color:#ADD8E6
