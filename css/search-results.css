@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/********************
+¡MIXINS
+********************/
+/********************
+¡CLASSES
+********************/
+
+/*------------------------------------*\
+              ¡BUTTONS
+\*------------------------------------*/
+.btn {
+  background: #FFF;
+  border: solid 1px #CCC;
+  height: 25px;
+  text-align: center;
+  width: 140px;
+}
+
+/*------------------------------------*\
+                ¡BOX
+\*------------------------------------*/
+.box-wrap {
+  margin: 50px 0;
+}
+.top-box {
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  padding: 5px;
+}
+.box {
+  width: 32%;
+  border: solid 1px #CCC;
+  float: left;
+  padding: 5px;
+  background-color: #FFF
+}
+  .box:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+  }
+  .box:nth-child(3n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .box img {
+    display: block;
+    margin: 0 0 10px;
+    width: 100%;
+  }
