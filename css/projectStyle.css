@@ -132,7 +132,7 @@ header {
     background-color: #fbfbfb;
   }
   nav {
-    /*display: -webkit-box;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
@@ -142,18 +142,18 @@ header {
     -webkit-justify-content: space-between;
     -moz-justify-content: space-between;
     justify-content: space-between;
-    /*background-color: #ADD8E6;*/*/
+    /*background-color: #ADD8E6;*/
   }
     nav a {
-      width: 150px;
-      height: 40px;
+      width: 160px;
+      height: 26px;
       text-align: center;
-      line-height: 25px;
+      line-height: 100%;
       border: solid 1px;
       color: #494949;
       display: inline-block;
       float: left;
-      margin: 0 5px 0 5px;
+      margin: 0 2px 0 2px;
       padding: 5px 10px;
       text-decoration: none;
       transition: all 0.3s ease 0s;
@@ -164,7 +164,7 @@ header {
 		    color: #ADD8E6;
       }
       nav a:last-child {
-        margin: 0 20px 0 0;
+        margin: 0;
       }
 
       nav a:visited{
@@ -174,7 +174,7 @@ header {
   border: solid 1px;
   color: #494949;
   display: inline-block;
-  float: right;
+  float: left;
   width: 180px
   margin: 0 5px 0 5px;
   padding: 5px 10px;
@@ -189,7 +189,7 @@ header {
   border: solid 1px;
   color: #494949;
   display: inline-block;
-  float: right;
+  float: left;
   width: 180px
   margin: 0 5px 0 5px;
   padding: 5px 10px;
