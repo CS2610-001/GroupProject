@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Profile</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<link rel="stylesheet" href="css\kyle.css" charset="utf-8">
+	<link rel="stylesheet" href="css\projectStyle.css" charset="utf-8">
+	<link rel="stylesheet" href="css\kyle.css" type="text/css" charset="utf-8">
 
 	<script type="text/javascript">
 		function saveData(){
@@ -29,22 +30,26 @@
 	</script>
 </head>
 <body>
-  <header>
-		<div class="header">
-			<h1>&lt;USER&gt;'s Profile</h1>
+	<div class="wrap">
+		<header class = "header-and-footer">
+			<div class="squeeze">
+				<h1>Profile</h1>
+			</div>
+		</header>
+		<div class="nav-wrap">
+			<div class="squeeze">
+				<nav>
+					<a href="./index.html">Home</a>
+					<a href="./dashboard.html">Dashboard</a>
+					<a href="./profile.html">Profile</a>
+					<a href="./saved-searches.html">Saved Searches</a>
+					<form id="searchbar">
+						<input type="text" size="25" maxlength="150" class = "search-text"><input type="submit" class="search-button" value="Search">
+					</form>
+				</nav>
+			</div>
 		</div>
-	</header>
-	<!--Logout user and return to dashboard-->
-	<input type="submit" class="button-link" value="Logout" onclick="logout()">
-	<nav>
-		<a href="./index.html">Dashboard</a>
-		<a href="./dashboard.html">Home</a>
-		<a href="./profile.html">Profile</a>
-		<a href="./savedSearches.html">Saved Searches</a>
-		<form id="searchbar">
-			<input type="text" size="25" maxlength="150"><input type="submit" class="button-link" value="Search">
-		</form>
-	</nav>
+	<div class="content">
 	<div class="profilePic">
 		<img src="images/profilePic.jpg" alt="Profile Picture" ></img>
 	</div>
@@ -55,5 +60,12 @@
 		<p><textarea rows="4" cols="50" type="text" id="bio">Bio</textarea></p>
 		<input type="submit" class="button-link" value="SAVE" onclick="saveData()">
 	</div>
+	</div>
+</div>
+	<footer class = "header-and-footer">
+		<div class="squeeze">
+			<h4>Footer</h4>
+		</div>
+	</footer>
 </body>
 </html>
