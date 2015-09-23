@@ -166,7 +166,30 @@ header {
       nav a:visited{
         /*color: #551A8B;*/
       }
-
+.search-button{
+  border: solid 1px;
+  color: #494949;
+  display: inline-block;
+  float: left;
+  width: 180px
+  margin: 0 5px 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+  .search-button:hover, .search-button:active {
+    background-color: #434C50;
+    color: #ADD8E6;
+  }
+.search-text {
+  border: solid 1px;
+  color: #494949;
+  display: inline-block;
+  float: left;
+  width: 180px
+  margin: 0 5px 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
   /*------------------------------------*\
                   ¡FOOTER
   \*------------------------------------*/
