@@ -77,6 +77,8 @@ h1, h2, h3, h4, h5, h6 {
 /*------------------------------------*\
               ¡GENERAL
 \*------------------------------------*/
+
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -91,8 +93,7 @@ html {
 }
 body {
   /*background: #FFF;*/
-  background-image: url(../images/Sea-green-blur-background1.jpg);
-  /*background-image: url(../images/Light-Blue-blur-background1.jpg);*/
+  background-color: #fbfbfb;
   color: #494949;
   font-family: sans-serif;
   height: 100%;
@@ -114,6 +115,8 @@ header {
   height: 100px;
   margin: 0 0 10px;
   position: relative;
+  background-color: #125688;
+  color: #fbfbfb;
 }
   header h1 {
     line-height: 100px;
@@ -125,6 +128,9 @@ header {
   /*------------------------------------*\
                   ¡NAV
   \*------------------------------------*/
+  .nav-wrap{
+    background-color: #fbfbfb;
+  }
   nav {
     display: -webkit-box;
     display: -webkit-flex;
@@ -136,7 +142,7 @@ header {
     -webkit-justify-content: space-between;
     -moz-justify-content: space-between;
     justify-content: space-between;
-    background-color: #ADD8E6;
+    /*background-color: #ADD8E6;*/
   }
     nav a {
       border: solid 1px;
@@ -147,7 +153,7 @@ header {
       margin: 0 5px 0 5px;
       padding: 5px 10px;
       text-decoration: none;
-      background-color:#ADD8E6
+      /*background-color:#ADD8E6*/
     }
       nav a:hover, nav a:active {
         background-color: #434C50;
@@ -172,4 +178,6 @@ header {
   footer {
     border-top: solid 1px #CCC;
     padding: 10px 0;
+    background-color: #125688;
+    color: #fbfbfb;
   }
