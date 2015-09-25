@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /********************
 ¡MIXINS
 ********************/
@@ -11,23 +11,31 @@
 \*------------------------------------*/
 .btn {
   background: #FFF;
+  border: solid 0px #CCC;
+  height: 25px;
+  text-align: center;
+  width: 140px;
+}
+.btn-savesearch {
+  background: #FFF;
   border: solid 1px #CCC;
   height: 25px;
   text-align: center;
   width: 140px;
+  float: right;
 }
 
 /*------------------------------------*\
                 ¡BOX
 \*------------------------------------*/
 .box-wrap {
-  margin: 50px 0;
+  margin: 10px 0;
 }
 .top-box {
   width: 100%;
   margin-left: 0%;
   margin-right: 0%;
-  padding: 5px;
+  margin-top: 5%;
 }
 .box {
   width: 32%;
@@ -37,12 +45,13 @@
   background-color: #FFF
 }
   .box:nth-child(n) {
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     margin-right: 2%;
   }
   .box:nth-child(3n) {
-    margin-right: 0;
-    margin-bottom: 0;
+    margin-right: 0%;
+    margin-bottom: 1%;
+    
   }
   .box img {
     display: block;
