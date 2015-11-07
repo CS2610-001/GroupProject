@@ -44,6 +44,15 @@ app.get('/feed', function(req, res){
   })
 })
 
+app.get('/', function(req, res){
+  res.redirect('/login')
+})
+
+app.get('/login', function(req, res){
+  res.render('index')
+})
+
+
 app.get('/auth/finalize', function(req, res){
   var post_data = {
     client_id: cfg.client_id,
