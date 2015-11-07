@@ -1,7 +1,6 @@
 var express = require('express')
 var exphbs = require('express-handlebars')
 var request = require('request')
-var bodyParser = require('body-parser')
 var querystring = require('querystring')
 var session = require('express-session')
 var cfg = require('./config')
