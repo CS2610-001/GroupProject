@@ -31,18 +31,19 @@ app.get('/authorize', function(req, res){
   res.redirect(url)
 })
 
-app.get('/feed', function(req, res){
+app.get('/dashboard', function(req, res){
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
   }
   request.get(options, function(error, response, body){
     var feed = JSON.parse(body)
 
-    res.render('feed', {
+    res.render('dashboard', {
       feed:feed.data
     })
   })
 })
+
 
 app.get('/auth/finalize', function(req, res){
   var post_data = {
@@ -61,7 +62,7 @@ app.get('/auth/finalize', function(req, res){
   request.post(options, function(error, response, body){
     var data = JSON.parse(body)
     req.session.access_token = data.access_token
-    res.redirect('/feed')
+    res.redirect('/dashboard')
   })
 })
 
