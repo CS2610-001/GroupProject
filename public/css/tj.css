@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/********************
+¡MIXINS
+********************/
+/********************
+¡CLASSES
+********************/
+
+/*------------------------------------*\
+              ¡BUTTONS
+\*------------------------------------*/
+.btn {
+  background: #FFF;
+  border: solid 1px #CCC;
+  height: 25px;
+  text-align: center;
+  width: 140px;
+}
+
+/*------------------------------------*\
+                ¡BOX
+\*------------------------------------*/
+.box-wrap {
+  margin: 50px 0;
+}
+
+.box {
+  width: 32%;
+  margin-left: 34%;
+  margin-right: 34%;
+  padding: 5px;
+}
+  .box:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+  }
+  .box:nth-child(3n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .box img {
+    display: block;
+    margin: 0 0 10px;
+    width: 100%;
+  }
