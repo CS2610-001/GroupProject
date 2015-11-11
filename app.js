@@ -17,6 +17,8 @@ app.use(session({
   saveUninitialized: true
 }))
 
+app.use(express.static('public/css'));
+
 app.get('/authorize', function(req, res){
   var qs = {
     client_id: cfg.client_id,

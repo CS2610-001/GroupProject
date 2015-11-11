@@ -110,7 +110,7 @@ body {
 /*------------------------------------*\
                 ¡HEADER
 \*------------------------------------*/
-gp-header {
+.gp-header {
   border-bottom: solid 1px #CCC;
   height: 100px;
   margin: 0 0 10px;
@@ -195,6 +195,44 @@ gp-header {
   padding: 5px 10px;
   text-decoration: none;
 }
+/*------------------------------------*\
+              ¡BUTTONS
+\*------------------------------------*/
+.btn {
+  background: #FFF;
+  border: solid 1px #FFF;
+  height: 25px;
+  text-align: center;
+  width: 75px;
+}
+/*------------------------------------*\
+                ¡BOX
+\*------------------------------------*/
+.box-wrap {
+  margin: 50px 0;
+}
+
+.box {
+  width: 32%;
+  border: solid 1px #CCC;
+  float: left;
+  padding: 5px;
+  background-color: #FFF
+}
+  .box:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+  }
+  .box:nth-child(3n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .box img {
+    display: block;
+    margin: 0 0 10px;
+    width: 100%;
+  }
+
   /*------------------------------------*\
                   ¡FOOTER
   \*------------------------------------*/
@@ -203,7 +241,7 @@ gp-header {
     height: 100px;
   }
 
-  gp-footer {
+  .gp-footer {
     border-top: solid 1px #CCC;
     padding: 10px 0;
     background-color: #125688;
