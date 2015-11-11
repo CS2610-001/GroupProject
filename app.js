@@ -17,6 +17,8 @@ app.use(session({
   saveUninitialized: true
 }))
 
+// app.use()
+
 app.use(express.static('public/css'));
 
 app.get('/authorize', function(req, res){
@@ -32,6 +34,8 @@ app.get('/authorize', function(req, res){
 
   res.redirect(url)
 })
+
+
 
 app.get('/dashboard', function(req, res){
   var options = {
@@ -52,6 +56,10 @@ app.get('/', function(req, res){
 
 app.get('/login', function(req, res){
   res.render('index')
+})
+
+app.get('/profile', function(req, res){
+  res.render('profile')
 })
 
 app.get('/auth/finalize', function(req, res){

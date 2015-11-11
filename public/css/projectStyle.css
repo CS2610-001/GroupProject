@@ -67,6 +67,11 @@
   text-align: center;
   clear: both;
 }
+
+a {
+  text-decoration: none;
+  color: #494949;
+}
 /*------------------------------------*\
               ¡TYPOGRAPHY
 \*------------------------------------*/
@@ -231,6 +236,42 @@ body {
     display: block;
     margin: 0 0 10px;
     width: 100%;
+  }
+
+  /********************
+  ¡PROFILE CLASSES
+  ********************/
+
+  .profilePic {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .profileTextBox {
+    clear:both;
+    text-align: center;
+  }
+
+  .button-link {
+    background-color: #ADD8E6;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+
+  .button-link:hover{
+    background-color:#8AADB8;
+  }
+
+  .button-link:active{
+    -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.6);
+    background-color: #7C9CA6;
   }
 
   /*------------------------------------*\
