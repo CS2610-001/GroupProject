@@ -86,4 +86,7 @@ app.get('/auth/finalize', function(req, res){
   })
 })
 
+app.use(function(req, res){
+    res.send(404);
+  });
 app.listen(3000);
