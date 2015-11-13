@@ -58,6 +58,9 @@ app.get('/login', function(req, res){
   res.render('index')
 })
 
+app.get('/index', function(req, res){
+  res.render('index')
+})
 app.get('/profile', function(req, res){
   res.render('profile')
 })
