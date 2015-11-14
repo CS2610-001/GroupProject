@@ -1,0 +1,13 @@
+<html>
+<head>
+<script type="text/javascript">
+function search(){
+  var searchItem = document.getElementById("searchValue").value;
+  while(searchItem.charAt(0) === '#'){
+    searchItem = searchItem.substr(1);
+    document.location.href ='https://api.instagram.com/v1/tags/{'+searchItem+'}?access_token=ACCESS-TOKEN';
+  }
+}
+</script>
+</head>
+</html

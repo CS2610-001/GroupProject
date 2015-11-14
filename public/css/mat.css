@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*------------------------------------*\
+              ¡BUTTONS
+\*------------------------------------*/
+
+.btn-login {
+  background: #FFF;
+  border: solid 1px #FFF;
+  height: 25px;
+  text-align: center;
+  width: 75px;
+}

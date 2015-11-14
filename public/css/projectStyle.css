@@ -208,7 +208,18 @@ body {
   border: solid 1px #FFF;
   height: 25px;
   text-align: center;
-  width: 75px;
+  width: 85px;
+}
+
+.btn-login {
+  background: #FFF;
+  border: solid 3px #125688;
+  width: 85px;
+  margin-left: 50%;
+  left: -42px;
+  position: relative;
+  margin-top: 20px;
+  padding: 5px;
 }
 /*------------------------------------*\
                 ¡BOX
@@ -217,12 +228,23 @@ body {
   margin: 50px 0;
 }
 
+.box-login {
+  width: 32%;
+  position: absolute;
+  left: 34%;
+  border: solid 1px #CCC;
+  float: left;
+  padding: 15px;
+  background-color: #FFF;
+  text-align: center;
+}
+
 .box {
   width: 32%;
   border: solid 1px #CCC;
   float: left;
   padding: 5px;
-  background-color: #FFF
+  background-color: #FFF;
 }
   .box:nth-child(n) {
     margin-bottom: 2%;
