@@ -43,8 +43,23 @@ app.get('/dashboard', function(req, res){
   }
   request.get(options, function(error, response, body){
     var feed = JSON.parse(body)
+    console.log(req.session);
 
     res.render('dashboard', {
+      feed:feed.data,
+      user: req.session.user
+    })
+  })
+})
+
+app.get('/search', function(req, res){
+  var options = {
+    url: 'https://api.instagram.com/v1/tags/' + req.session.access_token,
+  }
+  request.get(options, function(error, response, body){
+    var feed = JSON.parse(body)
+
+    res.render('search-results', {
       feed:feed.data
     })
   })
@@ -65,6 +80,10 @@ app.get('/profile', function(req, res){
   res.render('profile')
 })
 
+app.get('/search', function(req, res){
+  res.render('search-results')
+})
+
 app.get('/auth/finalize', function(req, res){
   var post_data = {
     client_id: cfg.client_id,
@@ -81,7 +100,9 @@ app.get('/auth/finalize', function(req, res){
 
   request.post(options, function(error, response, body){
     var data = JSON.parse(body)
+    console.log(data.user);
     req.session.access_token = data.access_token
+    req.session.user = data.user.full_name
     res.redirect('/dashboard')
   })
 })
