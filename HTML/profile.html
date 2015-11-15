@@ -6,36 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link rel="stylesheet" href="css\projectStyle.css" charset="utf-8">
 	<link rel="stylesheet" href="css\kyle.css" type="text/css" charset="utf-8">
-
-	<script type="text/javascript">
-		function saveData(){
-			var emailAddress;
-			var biography;
-			emailAddress = document.getElementById("email").value;
-			biography = document.getElementById("bio").value;
-
-			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress)){
-    		alert("SAVED")
-  		}	else{
-				document.getElementById("email").value = "user@domain.tld";
-				alert("You have entered an invalid email address!")
-
-			}
-			document.getElementById("bio").value = biography;
-		}
-
-		function logout(){
-			alert("You have logged out. But not really cuz this button is broke.")
-		}
-
-		function search(){
-			var searchItem = document.getElementById("searchValue").value;
-			while(searchItem.charAt(0) === '#'){
-				searchItem = searchItem.substr(1);
-				document.location.href ='https://api.instagram.com/v1/tags/{'+searchItem+'}?access_token=ACCESS-TOKEN';
-			}
-		}
-	</script>
+	<script src="../javascript/scripts.js"></script>
 </head>
 <body>
 	<div class="wrap">
@@ -52,10 +23,10 @@
 					<a href="./dashboard.html">Dashboard</a>
 					<a href="./profile.html">Profile</a>
 					<a href="./saved-searches.html">Saved Searches</a>
-					<form id="searchbar">
-						<input type="text" size="25" maxlength="150" id="searchValue" class = "search-text">
-						<input type="submit" class="search-button" value="Search" onclick="search()">
-					</form>
+					<form id="searchbar" action="" method="post">
+    				<input type="text" size="25" maxlength="150" id="searchResults" class="search-text" name="query">
+    				<input type="submit" class="search-button" value="Search" onclick="search()">
+  				</form>
 				</nav>
 			</div>
 		</div>

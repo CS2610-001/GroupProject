@@ -53,6 +53,10 @@ app.get('/dashboard', function(req, res){
   })
 })
 
+app.get('/saved-searches', function(req, res){
+  res.render('saved-searches')
+})
+
 app.get('/search', function(req, res){
   var options = {
     url: 'https://api.instagram.com/v1/tags/' + req.session.access_token,
