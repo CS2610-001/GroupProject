@@ -2,6 +2,7 @@ var express = require('express')
 var exphbs = require('express-handlebars')
 var request = require('request')
 var querystring = require('querystring')
+var bodyParser = require('body-parser')
 var session = require('express-session')
 var cfg = require('./config')
 
@@ -17,7 +18,7 @@ app.use(session({
   saveUninitialized: true
 }))
 
-// app.use()
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.static('public/css'));
 
@@ -69,6 +70,22 @@ app.get('/', function(req, res){
   res.redirect('/login')
 })
 
+app.post('/search', function(req, res){
+  var query = req.body.query
+  var options = {
+    url: 'https://api.instagram.com/v1/tags/'+ query + '/media/recent?access_token=' + req.session.access_token,
+  }
+
+  request.get(options, function(error, response, body){
+    var feed = JSON.parse(body)
+
+    res.render('search-results', {
+      feed:feed.data,
+      user: req.session.user
+    })
+  })
+})
+
 app.get('/login', function(req, res){
   res.render('index')
 })
@@ -76,12 +93,9 @@ app.get('/login', function(req, res){
 app.get('/index', function(req, res){
   res.render('index')
 })
+
 app.get('/profile', function(req, res){
   res.render('profile')
-})
-
-app.get('/search', function(req, res){
-  res.render('search-results')
 })
 
 app.get('/auth/finalize', function(req, res){

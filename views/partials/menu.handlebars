@@ -2,7 +2,7 @@
   <a href="/dashboard">Dashboard</a>
   <a href="/profile">Profile</a>
   <a href="/saved-searches">Saved Searches</a>
-  <form id="searchbar">
-    <input type="text" size="25" maxlength="150" class = "search-text"><input type="submit" class="search-button" value="Search">
+  <form id="searchbar" action="/search" method="post">
+    <input type="text" size="25" maxlength="150" class = "search-text" name=query><input type="submit" class="search-button" value="Search" onclick='search()'>
   </form>
 </nav>
