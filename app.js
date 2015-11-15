@@ -54,7 +54,9 @@ app.get('/dashboard', function(req, res){
 })
 
 app.get('/saved-searches', function(req, res){
-  res.render('saved-searches')
+  res.render('saved-searches',{
+    user: req.session.user
+  })
 })
 
 app.get('/search', function(req, res){
@@ -99,7 +101,12 @@ app.get('/index', function(req, res){
 })
 
 app.get('/profile', function(req, res){
-  res.render('profile')
+  var options = {
+    url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
+  }
+  res.render('profile',{
+    user: req.session.user
+  })
 })
 
 app.get('/auth/finalize', function(req, res){
