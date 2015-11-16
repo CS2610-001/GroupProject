@@ -129,6 +129,9 @@ body {
   header h4 {
     line-height: 100px;
   }
+  .logout {
+    color: #fbfbfb;
+  }
 
   /*------------------------------------*\
                   ¡NAV
@@ -214,7 +217,7 @@ body {
 .btn-login {
   background: #FFF;
   border: solid 3px #125688;
-  width: 85px;
+  width: 95px;
   margin-left: 50%;
   left: -42px;
   position: relative;

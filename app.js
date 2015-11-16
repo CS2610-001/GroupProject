@@ -37,14 +37,20 @@ app.get('/authorize', function(req, res){
 })
 
 
-
-app.get('/dashboard', function(req, res){
+app.get('/dashboard', function(req, res, next){
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
   }
   request.get(options, function(error, response, body){
+    try {
     var feed = JSON.parse(body)
-    console.log(req.session);
+    if(feed.meta.code > 200){
+      return next(feed.meta.error_message);
+    }
+  }
+  catch(err){
+    return next(err)
+  }
 
     res.render('dashboard', {
       feed:feed.data,
@@ -59,31 +65,26 @@ app.get('/saved-searches', function(req, res){
   })
 })
 
-app.get('/search', function(req, res){
-  var options = {
-    url: 'https://api.instagram.com/v1/tags/' + req.session.access_token,
-  }
-  request.get(options, function(error, response, body){
-    var feed = JSON.parse(body)
-
-    res.render('search-results', {
-      feed:feed.data
-    })
-  })
-})
-
 app.get('/', function(req, res){
   res.redirect('/login')
 })
 
-app.post('/search', function(req, res){
+app.post('/search', function(req, res, next){
   var query = req.body.query
   var options = {
     url: 'https://api.instagram.com/v1/tags/'+ query + '/media/recent?access_token=' + req.session.access_token,
   }
 
   request.get(options, function(error, response, body){
-    var feed = JSON.parse(body)
+    try {
+      var feed = JSON.parse(body)
+      if(feed.meta.code > 200){
+        return next(feed.meta.error_message);
+      }
+    }
+    catch(err) {
+      return next(err)
+    }
 
     res.render('search-results', {
       feed:feed.data,
@@ -109,7 +110,7 @@ app.get('/profile', function(req, res){
   })
 })
 
-app.get('/auth/finalize', function(req, res){
+app.get('/auth/finalize', function(req, res, next){
   var post_data = {
     client_id: cfg.client_id,
     client_secret: cfg.client_secret,
@@ -125,14 +126,23 @@ app.get('/auth/finalize', function(req, res){
 
   request.post(options, function(error, response, body){
     var data = JSON.parse(body)
-    console.log(data.user);
-    req.session.access_token = data.access_token
-    req.session.user = data.user.full_name
-    res.redirect('/dashboard')
+      req.session.access_token = data.access_token
+      req.session.user = data.user.full_name
+      res.redirect('/dashboard')
   })
 })
 
+
 app.use(function(req, res){
     res.send(404);
-  });
+  })
+
+app.use(function(err, req, res, next) {
+  
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err,
+        error: {}
+    });
+})
 app.listen(3000);
