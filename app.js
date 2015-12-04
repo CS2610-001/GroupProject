@@ -4,7 +4,12 @@ var request = require('request')
 var querystring = require('querystring')
 var bodyParser = require('body-parser')
 var session = require('express-session')
+var MongoClient = require('mongodb').MongoClient
+var assert = require('assert')
 var cfg = require('./config')
+
+var db = require('./db')
+var Users = require('./models/users')
 
 var app = express()
 
@@ -138,11 +143,21 @@ app.use(function(req, res){
   })
 
 app.use(function(err, req, res, next) {
-  
+
     res.status(err.status || 500);
     res.render('error', {
         message: err,
         error: {}
     });
 })
-app.listen(3000);
+
+db.connect('mongodb://dbuser:password@ds055574.mongolab.com:55574/testing', function(err) {
+  if (err) {
+    console.log('Unable to connect to Mongo.')
+    process.exit(1)
+  } else {
+    app.listen(3000, function() {
+      console.log('Listening on port 3000...')
+    })
+  }
+})
