@@ -4,7 +4,6 @@ var request = require('request')
 var querystring = require('querystring')
 var bodyParser = require('body-parser')
 var session = require('express-session')
-var MongoClient = require('mongodb').MongoClient
 var assert = require('assert')
 var cfg = require('./config')
 
@@ -102,6 +101,8 @@ app.get('/login', function(req, res){
   res.render('index')
 })
 
+app.post('/')
+
 app.get('/index', function(req, res){
   res.render('index')
 })
@@ -110,9 +111,19 @@ app.get('/profile', function(req, res){
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
   }
-  res.render('profile',{
-    user: req.session.user
-  })
+
+  if (req.session.userId) {
+    //Find user
+    Users.find(req.session.userId, function(document) {
+      if (!document) return res.redirect('/')
+      //Render the update view
+      res.render('profile', {
+        user: document
+      })
+    })
+  } else {
+    res.redirect('/')
+  }
 })
 
 app.get('/auth/finalize', function(req, res, next){
@@ -132,8 +143,11 @@ app.get('/auth/finalize', function(req, res, next){
   request.post(options, function(error, response, body){
     var data = JSON.parse(body)
       req.session.access_token = data.access_token
-      req.session.user = data.user.full_name
-      res.redirect('/dashboard')
+      req.session.userName = data.user.full_name
+      Users.insert(data.user, function(result) {
+        req.session.userID = result.ops[0].id
+        res.redirect('/dashboard');
+      })
   })
 })
 
@@ -151,7 +165,7 @@ app.use(function(err, req, res, next) {
     });
 })
 
-db.connect('mongodb://dbuser:password@ds055574.mongolab.com:55574/testing', function(err) {
+db.connect('mongodb://meganjobass:ZeldaLove167@ds045704.mongolab.com:45704/instagram-app', function(err) {
   if (err) {
     console.log('Unable to connect to Mongo.')
     process.exit(1)
