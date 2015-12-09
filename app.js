@@ -58,14 +58,14 @@ app.get('/dashboard', function(req, res, next){
 
     res.render('dashboard', {
       feed:feed.data,
-      user: req.session.user
+      userName: req.session.userName
     })
   })
 })
 
 app.get('/saved-searches', function(req, res){
   res.render('saved-searches',{
-    user: req.session.user
+    userName: req.session.userName
   })
 })
 
@@ -112,13 +112,14 @@ app.get('/profile', function(req, res){
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
   }
 
-  if (req.session.userId) {
+  if (req.session.userID) {
     //Find user
-    Users.find(req.session.userId, function(document) {
+    Users.find(req.session.userID, function(document) {
       if (!document) return res.redirect('/')
       //Render the update view
       res.render('profile', {
         user: document
+
       })
     })
   } else {
@@ -142,12 +143,28 @@ app.get('/auth/finalize', function(req, res, next){
 
   request.post(options, function(error, response, body){
     var data = JSON.parse(body)
+    console.log(data);
+    var user = data.user;
+    user._id = user.id;
+    delete user.id;
+
       req.session.access_token = data.access_token
       req.session.userName = data.user.full_name
-      Users.insert(data.user, function(result) {
-        req.session.userID = result.ops[0].id
-        res.redirect('/dashboard');
+      Users.find(user._id, function(document){
+        // req.session.message = "It Worked!"
+        // res.redirect('/profile');
+        if(!document){
+          Users.insert(data.user, function(result) {
+            console.log(result);
+            req.session.userID = result.ops[0].id
+            res.redirect('/dashboard');
+          })
+        } else {
+          req.session.userID = user._id;
+          res.redirect('/dashboard');
+        }
       })
+
   })
 })
 
@@ -165,7 +182,7 @@ app.use(function(err, req, res, next) {
     });
 })
 
-db.connect('mongodb://meganjobass:ZeldaLove167@ds045704.mongolab.com:45704/instagram-app', function(err) {
+db.connect('mongodb://cs2610:testing@ds045704.mongolab.com:45704/instagram-app', function(err) {
   if (err) {
     console.log('Unable to connect to Mongo.')
     process.exit(1)

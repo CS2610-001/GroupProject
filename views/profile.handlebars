@@ -2,7 +2,7 @@
   <header class = "gp-header">
     <div class="gp-squeeze">
       <h1 class= "pull--left">Profile</h1>
-      <h4 class ="pull--right"> welcome {{user}}! </h4>
+      <h4 class ="pull--right"> welcome {{user.full_name}}! </h4>
     </div>
   </header>
   <div class="nav-wrap">
@@ -12,7 +12,7 @@
   </div>
 <div class="content">
 <div class="profilePic">
-  <img src="images/profilePic.jpg" alt="Profile Picture" ></img>
+  <img src={{user.profile_picture}} alt="Profile Picture" ></img>
 </div>
 <div class="profileTextBox">
   <p><input type="text" value="<NAME>" readonly /></p>
