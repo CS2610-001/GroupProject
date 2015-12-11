@@ -92,7 +92,8 @@ app.post('/search', function(req, res, next){
 
     res.render('search-results', {
       feed:feed.data,
-      user: req.session.user
+      userName: req.session.userName,
+      search_tag: query
     })
   })
 })

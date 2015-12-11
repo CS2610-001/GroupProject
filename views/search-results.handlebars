@@ -1,8 +1,8 @@
 <div class="wrap">
   <header class = "gp-header">
     <div class="gp-squeeze">
-      <h1 class= "pull--left">Search</h1>
-      <h4 class ="pull--right"> welcome {{user}}! </h4>
+      <h1 class= "pull--left">#{{search_tag}}</h1>
+      <h4 class ="pull--right"> welcome {{userName}}! </h4>
     </div>
   </header>
   <div class="nav-wrap">
@@ -12,6 +12,10 @@
   </div>
   <div class="content">
     <div class="gp-squeeze">
+      <form id="saveSearch" action="/tags/save" method="post">
+        <input type="hidden" class = "search-text" value={{search_tag}}>
+        <input type="submit" class="save-button" value="save">
+      </form>
       {{>feed}}
     </div>
   </div>
