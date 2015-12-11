@@ -128,6 +128,16 @@ app.get('/profile', function(req, res){
   }
 })
 
+app.post('/profile', function(req, res){
+  var query = req.body
+  Users.update(query, function(){
+    res.render('profile', {
+      user: query,
+      success: 'Updated!'
+    })
+  })
+
+})
 app.get('/auth/finalize', function(req, res, next){
   var post_data = {
     client_id: cfg.client_id,
