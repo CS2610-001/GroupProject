@@ -131,10 +131,7 @@ app.get('/profile', function(req, res){
 app.post('/profile', function(req, res){
   var query = req.body
   Users.update(query, function(){
-    res.render('profile', {
-      user: query,
-      success: 'Updated!'
-    })
+    res.redirect('/profile')
   })
 
 })
