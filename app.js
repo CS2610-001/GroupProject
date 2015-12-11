@@ -98,6 +98,15 @@ app.post('/search', function(req, res, next){
   })
 })
 
+app.post('/tags/save', function(req, res, next){
+  var tag = req.body.tag
+  var userId = req.session.userID
+  //Add the tag to the user
+  Users.addTag(userId, tag, function() {
+    res.redirect('/saved-searches')
+  })
+})
+
 app.get('/login', function(req, res){
   res.render('index')
 })

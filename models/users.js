@@ -43,7 +43,7 @@ exports.addTag = function(userId, tag, callback) {
   var collection = db.get().collection('users')
   // Add the tag
   collection.update(
-    {'_id': ObjectId(userId)},
+    {'_id': userId},
     { $push: { tags: tag }},
     function(err, result) {
       assert.equal(err, null)
@@ -59,7 +59,7 @@ exports.removeTag = function(userId, tag, callback) {
   var collection = db.get().collection('users')
   // Add the tag
   collection.update(
-    {'_id': ObjectId(userId)},
+    {'_id': userId},
     { $pull: { tags: tag }},
     function(err, result) {
       assert.equal(err, null)

@@ -183,7 +183,7 @@ body {
   color: #494949;
   display: inline-block;
   float: left;
-  width: 180px
+  width: 180px;
   margin: 0 5px 0 5px;
   padding: 5px 10px;
   text-decoration: none;
@@ -198,8 +198,16 @@ body {
   color: #494949;
   display: inline-block;
   float: left;
-  width: 180px
+  width: 180px;
   margin: 0 5px 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.tag-form {
+  display: inline-block;
+  float: left;
+  margin-top: 30px;
   padding: 5px 10px;
   text-decoration: none;
 }
@@ -223,6 +231,18 @@ body {
   position: relative;
   margin-top: 20px;
   padding: 5px;
+}
+.save-button{
+  border: solid 1px;
+  background-color: #ccff99;
+  display: inline-block;
+  float: left;
+  font-size: 12px;
+  width: 180px
+  margin-top: 15px;
+  padding: 8px 10px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
 }
 /*------------------------------------*\
                 ¡BOX
