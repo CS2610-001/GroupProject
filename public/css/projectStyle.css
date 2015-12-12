@@ -204,10 +204,31 @@ body {
   text-decoration: none;
 }
 
+.saved-tag {
+  border: solid 1px;
+  color: #494949;
+  display: inline-block;
+  float: left;
+  width: 180px;
+  margin: 0 5px 0 2px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
 .tag-form {
   display: inline-block;
   float: left;
   margin-top: 30px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.saved-tag {
+  display: inline-block;
+  float: left;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 0px !important;
   padding: 5px 10px;
   text-decoration: none;
 }
@@ -241,6 +262,18 @@ body {
   width: 180px
   margin-top: 15px;
   padding: 8px 10px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+.delete-button{
+  border: solid 1px;
+  background-color: #ff3333;
+  display: inline-block;
+  float: left;
+  font-size: 12px;
+  width: 180px;
+  margin-top: 30px;
+  margin-left: 0px !important;
   text-decoration: none;
   transition: all 0.3s ease 0s;
 }

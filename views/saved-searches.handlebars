@@ -2,13 +2,28 @@
   <header class = "gp-header">
     <div class="gp-squeeze">
       <h1 class= "pull--left">Saved Searches</h1>
-      <h4 class ="pull--right"> welcome {{user}}! </h4>
+      <h4 class ="pull--right"> welcome {{userName}}! </h4>
     </div>
   </header>
   <div class="nav-wrap">
     <div class="gp-squeeze">
       {{>menu}}
     </div>
+  </div>
+  <div class="box-wrap clear">
+    {{#if user.tags}}
+      {{#each user.tags}}
+          <div class="group-btn clear">
+            <form id="searchbar" class="tag-form" action="/search" class="pull--left" method="post">
+              <input type="submit" class = "saved-tag" name="query" value="{{this}}">
+            </form>
+            <form id="searchbar" class="tag-form" action="/tags/remove" class="pull--left" method="post">
+              <input type="submit" class = "delete-button saved-tag" value="Delete">
+              <input type="hidden" name="tag" value="{{this}}">
+            </form>
+          </div>
+      {{/each}}
+    {{/if}}
   </div>
 </div>
 <footer class = "gp-footer">

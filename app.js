@@ -64,9 +64,19 @@ app.get('/dashboard', function(req, res, next){
 })
 
 app.get('/saved-searches', function(req, res){
-  res.render('saved-searches',{
-    userName: req.session.userName
-  })
+  if (req.session.userID) {
+    //Find user
+    Users.find(req.session.userID, function(document) {
+      if (!document) return res.redirect('/')
+      //Render the update view
+      res.render('saved-searches', {
+        user: document,
+        userName: req.session.userName
+      })
+    })
+  } else {
+    res.redirect('/')
+  }
 })
 
 app.get('/', function(req, res){
@@ -98,13 +108,22 @@ app.post('/search', function(req, res, next){
   })
 })
 
-app.post('/tags/save', function(req, res, next){
+app.post('/tags/save', function(req, res){
   var tag = req.body.tag
   var userId = req.session.userID
   //Add the tag to the user
   Users.addTag(userId, tag, function() {
     res.redirect('/saved-searches')
   })
+})
+
+app.post('/tags/remove', function(req, res){
+   var tag = req.body.tag
+   var userId = req.session.userID
+   //Add the tag to the user
+   Users.removeTag(userId, tag, function() {
+     res.redirect('/saved-searches')
+   })
 })
 
 app.get('/login', function(req, res){

@@ -64,7 +64,7 @@ exports.removeTag = function(userId, tag, callback) {
     function(err, result) {
       assert.equal(err, null)
       assert.equal(1, result.result.n)
-      console.log('Added 1 tag to a document in the users collection')
+      console.log('Removed 1 from a document in the users collection')
       callback()
     }
   )
