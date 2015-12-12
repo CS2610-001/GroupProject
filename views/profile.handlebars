@@ -19,9 +19,10 @@
 <div class="profileTextBox">
   <form id="saveData" action="" method="post">
     <input type="hidden" name="_id" value ="{{user._id}}">
-    <p><input type="text" name="full_name" value={{user.full_name}} readonly /></p>
-    <p><input type="text" name="username" value={{user.username}}  /></p>
-    <p><textarea rows="4" cols="50" type="text" id="bio" name="bio" placeholder="test">{{user.bio}}</textarea></p>
+    <p>Username&nbsp;&nbsp;<input type="text" name="username" value={{user.username}}  /></p>
+    <p>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="full_name" value={{user.full_name}} /></p>
+    <p>Website&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="website" value={{user.website}}/></p>
+    <p>Bio<textarea rows="4" cols="50" type="text" id="bio" name="bio" placeholder="test">{{user.bio}}</textarea></p>
     <p><input type="submit" class="button-link" value="SAVE"></p>
   </form>
   {{#if success}}
